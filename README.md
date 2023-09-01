@@ -205,7 +205,7 @@ cd ../..
 ```
 
 
- Installing libosmo-abis
+Installing libosmo-abis
 ```
 git clone --depth 1 -b 0.6.0 https://gitea.osmocom.org/osmocom/libosmo-abis
 ```
@@ -234,6 +234,221 @@ sudo ldconfig
 cd ..
 ```
 "# 2/2
+
+Installing libosmo-netif
+```
+git clone --depth 1 -b 0.4.0 https://gitea.osmocom.org/osmocom/libosmo-netif
+```
+```
+cd libosmo-netif
+```
+```
+autoreconf -fi
+```
+```
+./configure
+```
+```
+make -j4
+```
+```
+make check
+```
+```
+sudo make install
+```
+```
+sudo ldconfig
+```
+```
+cd ..
+```
+"# 3/3
+
+
+Installing libosmo-sccp
+```
+git clone --depth 1 -b 1.0.0 https://gitea.osmocom.org/osmocom/libosmo-sccp
+```
+```
+cd libosmo-sccp
+```
+```
+autoreconf -fi
+```
+```
+./configure
+```
+```
+make -j4
+```
+```
+make check
+```
+```
+sudo make install
+```
+```
+sudo ldconfig
+```
+```
+cd ..
+```
+"# 5/5
+
+
+Installing libasn1
+```
+git clone --depth 1 -b 0.9.31 https://gitea.osmocom.org/cellular-infrastructure/libasn1c
+```
+```
+cd libasn1c
+```
+```
+autoreconf -fi
+```
+```
+./configure
+```
+```
+make -j4
+```
+```
+make check
+```
+```
+sudo make install
+```
+```
+sudo ldconfig
+```
+```
+cd ../..
+```
+"#
+
+
+Installing libsmpp34
+```
+git clone --depth 1 -b 1.13.0 https://gitea.osmocom.org/cellular-infrastructure/libsmpp34
+```
+```
+cd libsmpp34
+```
+```
+autoreconf -fi
+```
+```
+./configure
+```
+```
+make -j4
+```
+```
+make check
+```
+```
+sudo make install
+```
+```
+sudo ldconfig
+```
+```
+cd ..
+```
+"#
+```
+git clone --depth 1 -b 0.4.0 https://gitea.osmocom.org/cellular-infrastructure/osmo-iuh
+```
+```
+cd osmo-iuh
+```
+```
+autoreconf -fi
+```
+```
+./configure
+```
+```
+make -j4
+```
+```
+make check
+```
+```
+sudo make install
+```
+```
+sudo ldconfig
+```
+```
+cd ../..
+```
+"# 3/3
+
+
+Installing osmo-ggsn maybe 1.9.0 or 1.3.0
+```
+git clone --depth 1 -b 1.9.0 https://gitea.osmocom.org/cellular-infrastructure/osmo-ggsn
+```
+```
+cd osmo-ggsn
+```
+```
+autoreconf -fi
+```
+```
+./configure
+```
+```
+make -j4
+```
+```
+make check
+```
+```
+sudo make install
+```
+```
+sudo ldconfig
+```
+```
+cd ..
+```
+"# 5/5
+
+
+
+
+
+
+```
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
 
 
 
