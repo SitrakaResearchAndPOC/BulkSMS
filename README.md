@@ -137,7 +137,7 @@ cd ..
 "# 51/51
 
 
-Just for memos : 
+Just for memos :  
 git clone git://git.osmocom.org/osmocom-bb.git  
 cd osmocom-bb/  
 git checkout 4f677e6ba8434dab376495cd996d140548fa6e93  
@@ -189,12 +189,65 @@ cd trx/src/
 ```
 git checkout 620fe497efa492feff4550e336cc3f8167715936
 ```
+```
+nano target/firmware/Makefile
+```
 "#uncomment CFLAGS += -DCONFIG_TX_ENABLE in the file target/firmware/Makefile"
 #ctrl+o return ctrl+x
-
+```
+tail -f target/firmware/Makefile
+```
+```
+make -j4 HOST_layer23_CONFARGS=--enable-transceiver -e CROSS_TOOL_PREFIX=arm-none-eabi-
+```
+```
+cd ../..
 ```
 
+
+ Installing libosmo-abis
 ```
+git clone --depth 1 -b 0.6.0 https://gitea.osmocom.org/osmocom/libosmo-abis
+```
+```
+cd libosmo-abis
+```
+```
+autoreconf -fi
+```
+```
+./configure
+```
+```
+make -j4
+```
+```
+make check
+```
+```
+sudo make install
+```
+```
+sudo ldconfig
+```
+```
+cd ..
+```
+"# 2/2
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
