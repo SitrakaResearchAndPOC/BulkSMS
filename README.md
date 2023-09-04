@@ -445,7 +445,7 @@ sudo ldconfig
 cd ..
 ```
 
-"#
+"#  
 Installing osmobts 1.0.0 or 1.2.2
 ```
 git clone --depth 1 -b 1.2.2 https://gitea.osmocom.org/cellular-infrastructure/osmo-trx
