@@ -415,16 +415,215 @@ sudo ldconfig
 ```
 cd ..
 ```
+"# 5/5  
+Installing osmo-sip-connector 1.2.0 or 1.3.1
+```
+git clone --depth 1 -b 1.3.1 https://gitea.osmocom.org/cellular-infrastructure/osmo-sip-connector
+```
+```
+cd osmo-sip-connector
+```
+```
+autoreconf -fi
+```
+```
+./configure
+```
+```
+make -j4
+```
+```
+make check
+```
+```
+sudo make install
+```
+```
+sudo ldconfig
+```
+cd ..
+```
+"#
+```
+Installing osmobts 1.0.0 or 1.2.2
+```
+git clone --depth 1 -b 1.2.2 https://gitea.osmocom.org/cellular-infrastructure/osmo-trx
+```
+```
+cd osmo-trx
+```
+```
+autoreconf -fi
+```
+```
+./configure --with-uhd
+```
+```
+make -j4
+```
+```
+make check
+```
+```
+sudo make install
+```
+```
+sudo ldconfig
+```
+"# 5/7
+```
+Installing osmobts 1.0.0 or 1.2.2
+```
+git clone --depth 1 -b 1.2.2 https://gitea.osmocom.org/cellular-infrastructure/osmo-bts
+```
+```
+cd osmo-bts
+```
+```
+autoreconf -fi
+```
+```
+./configure --enable-trx
+```
+```
+make -j4
+```
+```
+make check
+```
+```
+sudo make install
+```
+```
+sudo ldconfig
+```
+```
+cd ../..
+```
+"#8/8
+
+
+Installing osmo-pcu  0.6.0  or 1.1.0 
+```
+git clone --depth 1 -b 1.1.0 https://gitea.osmocom.org/cellular-infrastructure/osmo-pcu
+```
+```
+cd osmo-pcu
+```
+```
+autoreconf -fi
+```
+```
+./configure
+```
+```
+make -j4
+```
+```
+make check
+```
+```
+sudo make install
+```
+```
+sudo ldconfig
+```
+```
+cd ..
+```
+"# 12/12
+Installing opensc 1.3.0 or 1.4.1
+```
+git clone --depth 1 -b 1.4.1 https://gitea.osmocom.org/cellular-infrastructure/openbsc
+```
+```
+cd openbsc/openbsc
+```
+```
+autoreconf -fi
+```
+```
+./configure --enable-mgcp-transcoding --enable-nat --enable-smpp --enable-osmo-bsc
+```
+```
+make -j4
+```
+```
+make check
+```
+```
+sudo make install
+```
+```
+sudo ldconfig
+```
+```
+cd ../..
+```
+"# 15/15
+
+Installing osmo-hlr 1.0.0
+```
+git clone --depth 1 -b 1.0.0 https://gitea.osmocom.org/cellular-infrastructure/osmo-hlr
+```
+```
+cd osmo-hlr
+```
+```
+autoreconf -fi
+```
+```
+./configure
+```
+```
+make -j4
+```
+```
+make check
+```
+```
+sudo make install
+```
+```
+sudo ldconfig
+```
+```
+cd ..
+```
 "# 5/5
-
-
-
-
-
-
+Installing sgsn 1.4.0 or 1.6.2
 ```
-
+git clone --depth 1 -b 1.6.2 https://gitea.osmocom.org/cellular-infrastructure/osmo-sgsn
 ```
+```
+cd osmo-sgsn
+```
+```
+autoreconf -fi
+```
+```
+./configure
+```
+```
+make -j4
+```
+```
+make check
+```
+```
+sudo make install
+```
+```
+sudo ldconfig
+```
+```
+cd ..
+```
+"# 8/8
+
+
+
+
 
 
 
