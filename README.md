@@ -106,9 +106,9 @@ cd ../../..
 ```
 
 
-Installing libosmocore
+Installing libosmocore 1.7.0 pr 1.0.1
 ```
-git clone --depth 1 -b 1.0.1 https://gitea.osmocom.org/osmocom/libosmocore
+git clone --depth 1 -b 1.7.0 https://gitea.osmocom.org/osmocom/libosmocore
 ```
 ```
 cd libosmocore
@@ -416,7 +416,7 @@ sudo ldconfig
 cd ..
 ```
 "# 5/5  
-Installing osmo-sip-connector 1.2.0 or 1.3.1
+Installing osmo-sip-connector 1.3.1 or 1.2.0
 ```
 git clone --depth 1 -b 1.3.1 https://gitea.osmocom.org/cellular-infrastructure/osmo-sip-connector
 ```
@@ -446,9 +446,9 @@ cd ..
 ```
 
 "#  
-Installing osmobts 1.0.0 or 1.2.2
+Installing osmobts  1.2.0 or 1.2.2 or 1.0.2 or 1.0.0 
 ```
-git clone --depth 1 -b 1.2.2 https://gitea.osmocom.org/cellular-infrastructure/osmo-trx
+git clone --depth 1 -b 1.2.0 https://gitea.osmocom.org/cellular-infrastructure/osmo-trx
 ```
 ```
 cd osmo-trx
@@ -473,7 +473,7 @@ sudo ldconfig
 ```
 "# 5/7
 
-Installing osmobts 1.0.0 or 1.2.2
+Installing osmobts 1.2.2 or 1.0.0
 ```
 git clone --depth 1 -b 1.2.2 https://gitea.osmocom.org/cellular-infrastructure/osmo-bts
 ```
@@ -504,9 +504,9 @@ cd ../..
 "#8/8
 
 
-Installing osmo-pcu  0.6.0  or 1.1.0 
+Installing osmo-pcu  0.6.0  or 1.2.0 or 1.1.0 
 ```
-git clone --depth 1 -b 1.1.0 https://gitea.osmocom.org/cellular-infrastructure/osmo-pcu
+git clone --depth 1 -b 0.6.0 https://gitea.osmocom.org/cellular-infrastructure/osmo-pcu
 ```
 ```
 cd osmo-pcu
@@ -533,7 +533,7 @@ sudo ldconfig
 cd ..
 ```
 "# 12/12
-Installing opensc 1.3.0 or 1.4.1
+Installing opensc 1.4.1 or 1.3.0
 ```
 git clone --depth 1 -b 1.4.1 https://gitea.osmocom.org/cellular-infrastructure/openbsc
 ```
@@ -592,7 +592,7 @@ sudo ldconfig
 cd ..
 ```
 "# 5/5
-Installing sgsn 1.4.0 or 1.6.2
+Installing sgsn 1.6.2 or 1.4.0
 ```
 git clone --depth 1 -b 1.6.2 https://gitea.osmocom.org/cellular-infrastructure/osmo-sgsn
 ```
