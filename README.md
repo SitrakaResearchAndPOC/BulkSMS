@@ -673,13 +673,15 @@ Configure arfcn at service/osmotrx.lms as 975
 nano services/osmo-trx-lms3.service 
 ```
 Save the configuration using ctrl+x
+```
 mkdir /usr/src/CalypsoBTS/
-
-
+```
+```
 touch /usr/src/CalypsoBTS/hlr.sqlite3
-
+```
+```
 cd osmo-nitb-scripts-calypsobts
-
+```
 ```
 bash install_services.sh 
 ```
@@ -746,8 +748,10 @@ Running transceiver
 bash trx.sh
 ```
 Click button power of motorola phone  
-
-or on Terminal
+```
+exit
+```
+on Terminal
 ```
 lxc exec BulkSMS -- bash osmo-nitb-scripts-calypsobts/trx.sh
 ```
@@ -814,6 +818,34 @@ You could find imsi and extension
 ```
 lxc exec BulkSMS -- python2 osmo-nitb-scripts-calypsobts/scripts_spoof2/show_subscribers.py
 ```
+## Testing CALYPSO FakeSMS Sender
+Tape `*#*#4636#*#*` and choose GSM only on your Android phone  
+Installing network signal guru on your android phone  
+And finding the arfcn that this one is connect  
+Let's name this arfcn as 975  
+Configure arfcn at service/osmotrx.lms as 975
+```
+lxc exec BulkSMS -- nano osmo-nitb-scripts-calypsobts/services/osmo-trx-lms3.service 
+```
+Save the configuration using ctrl+x
+```
+lxc exec BulkSMS -- osmo-nitb-scripts-calypsobts/install_services.sh 
+```
+
+
+```
+lxc exec BulkSMS -- bash osmo-nitb-scripts-calypsobts/trx.sh
+```
+Tape ctrl+shift+T
+```
+lxc exec BulkSMS -- python3 osmo-nitb-scripts-calypsobts/main.py
+```
+```
+lxc exec BulkSMS -- python3 osmo-nitb-scripts-calypsobts/interact.py
+```
+
+
+
 ## Testing TRX UHD (USRP)
 ```
 wget https://raw.githubusercontent.com/SitrakaResearchAndPOC/fork_QCSuperLXD/main/lxd-device
