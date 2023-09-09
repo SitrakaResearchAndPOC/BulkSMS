@@ -1,0 +1,502 @@
+root@BulkSMS:~# history
+    3  ping 8.8.8.8
+    4  reboot
+    5  history
+    6  ls
+    7  cd src/
+    8  ls
+    9  cd trx/
+   10  ls
+   11  cd trx/src/
+   12  git checkout 620fe497efa492feff4550e336cc3f8167715936
+   13  git checkout 620fe497efa492feff4550e336cc3f8167715936
+   14  ls
+   15  cd ..
+   16  ls
+   17  cd trx/src/
+   18  git checkout 620fe497efa492feff4550e336cc3f8167715936
+   19  cd ..*
+   20  cd ..
+   21  rm -rf trx/
+   22  git clone git://git.osmocom.org/osmocom-bb.git -b fixeria/trx trx
+   23  cd trx/src/
+   24  git checkout 620fe497efa492feff4550e336cc3f8167715936
+   25  nano target/firmware/Makefile
+   26  tail -f target/firmware/Makefile
+   27  make -j4 HOST_layer23_CONFARGS=--enable-transceiver -e CROSS_TOOL_PREFIX=arm-none-eabi-
+   28  V
+   29  cd ../..
+   30  git clone --depth 1 -b 0.6.0 https://gitea.osmocom.org/osmocom/libosmo-abis
+   31  cd libosmo-abis
+   32  autoreconf -fi
+   33  ./configure
+   34  make -j4
+   35  sudo make install
+   36  make -j4
+   37  make check
+   38  sudo make install
+   39  make install
+   40  ldconfig
+   41  cd ..
+   42  git clone --depth 1 -b 0.4.0 https://gitea.osmocom.org/osmocom/libosmo-netif
+   43  cd libosmo-netif
+   44  autoreconf -fi
+   45  ./configure
+   46  make -j4
+   47  make check
+   48  sudo make install
+   49  sudo make install
+   50  smake install
+   51  make install
+   52  ldconfig
+   53  cd ..
+   54  git clone --depth 1 -b 1.0.0 https://gitea.osmocom.org/osmocom/libosmo-sccp
+   55  cd libosmo-sccp
+   56  autoreconf -fi
+   57  ./configure
+   58  make -j4
+   59  make check
+   60  make install
+   61  ldconfig
+   62  cd ..
+   63  git clone --depth 1 -b 0.9.31 https://gitea.osmocom.org/cellular-infrastructure/libasn1c
+   64  cd libasn1c
+   65  autoreconf -fi
+   66  ./configure
+   67  make -j4
+   68  sudo make install
+   69  make install
+   70  ldconfig
+   71  cd ../..
+   72  git clone --depth 1 -b 1.13.0 https://gitea.osmocom.org/cellular-infrastructure/libsmpp34
+   73  cd libsmpp34
+   74  autoreconf -fi
+   75  ./configure
+   76  make -j4
+   77  make install
+   78  ldconfig
+   79  cd ..
+   80  git clone --depth 1 -b 0.4.0 https://gitea.osmocom.org/cellular-infrastructure/osmo-iuh
+   81  cd osmo-iuh
+   82  autoreconf -fi
+   83  ./configure
+   84  make -j4
+   85  make install
+   86  ldconfig
+   87  cd ..
+   88  git clone --depth 1 -b 1.9.0 https://gitea.osmocom.org/cellular-infrastructure/osmo-ggsn
+   89  cd osmo-ggsn
+   90  autoreconf -fi
+   91  ./configure
+   92  cd ..
+   93  ls
+   94  cd src/
+   95  ls
+   96  rm -rf libosmocore/
+   97  git clone --depth 1 -b 1.7.0 https://gitea.osmocom.org/osmocom/libosmocore
+   98  cd libosmocore
+   99  autoreconf -fi
+  100  ./configure
+  101  apt-get install libmnl-dev
+  102  ./configure
+  103  make -j4
+  104  make check
+  105  sudo make install
+  106  make install
+  107  ldconfig
+  108  git clone git://git.osmocom.org/osmocom-bb.git -b fixeria/trx trx
+  109  git clone git://git.osmocom.org/osmocom-bb.git -b fixeria/trx trx2
+  110  cd trx2/src/
+  111  git checkout 620fe497efa492feff4550e336cc3f8167715936
+  112  nano target/firmware/Makefile
+  113  make -j4 HOST_layer23_CONFARGS=--enable-transceiver -e CROSS_TOOL_PREFIX=arm-none-eabi-
+  114  history
+  115  cd ..
+  116  cd ..
+  117  cd osmo-ggsn
+  118  cd ..
+  119  cd osmo-ggsn
+  120  ls
+  121  find -name
+  122  find -name cd osmo-ggsn
+  123  cd ..
+  124  ls
+  125  mv libsmpp34 src/
+  126  cd src/
+  127  ls
+  128  cd ..
+  129  ls
+  130  mv osmo-ggsn src/
+  131  mv osmo-iuh src/
+  132  cd src/
+  133  ls
+  134  cd osmo-ggsn
+  135  autoreconf -fi
+  136  ./configure
+  137  make -j4
+  138  make check
+  139  sudo make install
+  140  make install
+  141  ldconfig
+  142  cd ..
+  143  git clone --depth 1 -b 1.3.1 https://gitea.osmocom.org/cellular-infrastructure/osmo-sip-connector
+  144  cd osmo-sip-connector
+  145  autoreconf -fi
+  146  ./configure
+  147  make -j4
+  148  make install
+  149  ldconfig
+  150  cd ..
+  151  git clone --depth 1 -b 1.2.2 https://gitea.osmocom.org/cellular-infrastructure/osmo-trx
+  152  cd osmo-trx
+  153  ls
+  154  cd ..
+  155  cd osmo-trx
+  156  git clone --depth 1 -b 1.2.2 https://gitea.osmocom.org/cellular-infrastructure/osmo-trx
+  157  git clone --depth 1 -b 1.0.2 https://gitea.osmocom.org/cellular-infrastructure/osmo-trx
+  158  cd src/
+  159  git clone --depth 1 -b 1.2.0 https://gitea.osmocom.org/cellular-infrastructure/osmo-trx
+  160  cd osmo-trx
+  161  autoreconf -fi
+  162  ./configure --with-uhd
+  163  make -j4
+  164  sudo make install
+  165  make install
+  166  ldconfig
+  167  git clone --depth 1 -b  1.2.2 https://gitea.osmocom.org/cellular-infrastructure/osmo-bts
+  168  cd osmo-bts
+  169  autoreconf -fi
+  170  ./configure --enable-trx
+  171  make -j4
+  172  make install
+  173  ldconfig
+  174  cd ..
+  175  ls
+  176  cd ..
+  177  mv osmo-trx/osmo-bts/ ../src/
+  178  git clone --depth 1 -b  1.2.2 https://gitea.osmocom.org/cellular-infrastructure/osmo-pcu
+  179  git clone --depth 1 -b  1.2.0 https://gitea.osmocom.org/cellular-infrastructure/osmo-pcu
+  180  cd osmo-pcu
+  181  autoreconf -fi
+  182  ./configure
+  183  cd ..
+  184  git clone --depth 1 -b  0.6.0 https://gitea.osmocom.org/cellular-infrastructure/osmo-pcu
+  185  rm -rf osmo-pcu/
+  186  git clone --depth 1 -b  0.6.0 https://gitea.osmocom.org/cellular-infrastructure/osmo-pcu
+  187  cd osmo-pcu
+  188  autoreconf -fi
+  189  ./configure
+  190  make -j4
+  191  make check
+  192  sudo make install
+  193   make install
+  194  ldconfig
+  195  cd ..
+  196  git clone --depth 1 -b 1.4.1 https://gitea.osmocom.org/cellular-infrastructure/openbsc
+  197  cd openbsc/openbsc
+  198  autoreconf -fi
+  199  ./configure --enable-mgcp-transcoding --enable-nat --enable-smpp --enable-osmo-bsc
+  200  make -j4
+  201  sudo make install
+  202  make install
+  203  sudo ldconfig
+  204  ldconfig
+  205  cd ../..
+  206  git clone --depth 1 -b 1.0.0 https://gitea.osmocom.org/cellular-infrastructure/osmo-hlr
+  207  cd osmo-hlr
+  208  autoreconf -fi
+  209  ./configure
+  210  make -j4
+  211  sudo make install
+  212  make install
+  213  ldconfig
+  214  cd ..
+  215  git clone --depth 1 -b 1.6.2 https://gitea.osmocom.org/cellular-infrastructure/osmo-sgsn
+  216  cd osmo-sgsn
+  217  autoreconf -fi
+  218  ./configure
+  219  make -j4
+  220  make check
+  221  sudo make install
+  222   make install
+  223  ldconfig
+  224  wget https://raw.githubusercontent.com/SitrakaResearchAndPOC/nitb-script-all/main/osmo-nitb-scripts-calypsobts-v2.zip
+  225  unzip osmo-nitb-scripts-calypsobts-v2.zip 
+  226  cd osmo-nitb-scripts-calypsobts
+  227  mkdir /usr/src/CalypsoBTS/
+  228  touch /usr/src/CalypsoBTS/hlr.sqlite3
+  229  bash install_services.sh 
+  230  fuser -k /usr/src/CalypsoBTS/hlr.sqlite3
+  231  cp -rf src/trx/  /usr/src/CalypsoBTS/
+  232  cd ..
+  233  ls
+  234  cd ..
+  235  wget https://raw.githubusercontent.com/SitrakaResearchAndPOC/nitb-script-all/main/osmo-nitb-scripts-calypsobts-v2.zip
+  236  unzip osmo-nitb-scripts-calypsobts-v2.zip 
+  237  cp -rf src/trx/  /usr/src/CalypsoBTS/
+  238  cd ..
+  239  cp -rf src/trx2/  /usr/src/CalypsoBTS/
+  240  find -name trx2
+  241  mv src/libosmocore/trx2/ src/
+  242  cp -rf src/trx2/  /usr/src/CalypsoBTS/
+  243  cd /usr/src/CalypsoBTS/
+  244  cp trx/src/host/osmocon/osmocon ../CalypsoBTS/
+  245  cp trx2/src/host/osmocon/osmocon ../CalypsoBTS/
+  246  cp -rf trx/src/target/firmware/board ../CalypsoBTS/
+  247  cp -rf trx2/src/target/firmware/board ../CalypsoBTS/
+  248   mv board/ firmwares
+  249  cp trx/src/host/layer23/src/transceiver/transceiver ../CalypsoBTS/
+  250  cp trx2/src/host/layer23/src/transceiver/transceiver ../CalypsoBTS/
+  251  chmod +x osmocon
+  252  chmod +x transceiver 
+  253  ls
+  254  exit
+  255  !
+  256  ! OsmoBTS configuration example for CalypsoBTS
+  257  ! http://osmocom.org/projects/baseband/wiki/CalypsoBTS
+  258  ! http://osmocom.org/projects/baseband/wiki/CalypsoBTS
+  259  !
+  260  !
+  261  line vty
+  262   no login
+  263  !
+  264  phy 0
+  265   instance 0
+  266   osmotrx ip local 127.0.0.1
+  267   osmotrx ip remote 127.0.0.1
+  268   osmotrx timing-advance-loop
+  269   osmotrx ms-power-loop -65
+  270   osmotrx legacy-setbsic
+  271  bts 0
+  272   oml remote-ip 127.0.0.1
+  273   ipa unit-id 1801 0
+  274   gsmtap-sapi pdtch
+  275   gsmtap-sapi ccch
+  276   band 900
+  277   trx 0
+  278  sudo nano /usr/src/CalypsoBTS/osmo-bts-trx-calypso.cfg
+  279  nano /usr/src/CalypsoBTS/osmo-bts-trx-calypso.cfg
+  280  ls
+  281  cd osmo-nitb-scripts-calypsobts/
+  282  ls
+  283  bash install_services.sh 
+  284  python3 main.py 
+  285  python3 main.py 
+  286  bash install_services.sh 
+  287  nano services/osmo-bts-trx3.service 
+  288  bash install_services.sh 
+  289  python3 main.py 
+  290  nano services/osmo-bts-trx3.service 
+  291  python3 main.py 
+  292  nano services/osmo-bts-trx3.service 
+  293  bash install_services.sh 
+  294  bash install_services.sh 
+  295  python3 main.py 
+  296  nano services/osmo-bts-trx3.service 
+  297  osmo-bts-trx -c /usr/src/CalypsoBTS/osmo-bts-trx-calypso.cfg --debug DRSL:DOML:DLAPDM
+  298  bash install_services.sh 
+  299  nano install_services.sh 
+  300  nano services/osmo-nitb3.service 
+  301  nano services/osmo-nitb3.service 
+  302  osmo-nitb --yes-i-really-want-to-run-prehistoric-software -c /usr/src/CalypsoBTS/openbsc.cfg -l /usr/src/CalypsoBTS/hlr.sqlite3 -P -C --debug=DRLL:DCC:DMM:DRR:DRSL:DNM
+  303  bash install_services.sh 
+  304  osmo-nitb --yes-i-really-want-to-run-prehistoric-software -c /usr/src/CalypsoBTS/openbsc.cfg -l /usr/src/CalypsoBTS/hlr.sqlite3 -P -C --debug=DRLL:DCC:DMM:DRR:DRSL:DNM
+  305  ls /usr/src/CalypsoBTS/
+  306  python3 main.py 
+  307  journalctl -b -S 13:25:54 -u osmo-bts-trx3.service
+  308  mousepad services/osmo-bts-trx3.service 
+  309  nano services/osmo-bts-trx3.service 
+  310  python3 main.py 
+  311  bash install_services.sh 
+  312  python3 main.py 
+  313  nano services/osmo-bts-trx3.service 
+  314  bash install_services.sh 
+  315  python3 main.py 
+  316  journalctl -b -S 13:27:29 -u osmo-nitb3.service
+  317  find -name openbsc.cfg
+  318  find -name openbsc*.cfg
+  319  python3 main.py 
+  320  nano services/osmo-pcu3.service 
+  321  python3 main.py 
+  322  nano services/osmo-ggsn3.service 
+  323  nano services/osmo-sgsn3.service 
+  324  python3 main.py 
+  325  nano services/osmo-bts-trx3.service 
+  326  nano services/osmo-sip-connector3.service 
+  327  bash install_services.sh 
+  328  python3 main.py 
+  329  nano services/osmo-trx-lms3.service 
+  330  /usr/src/CalypsoBTS/transceiver -a 7
+  331  nano main.py 
+  332  nano main.py 
+  333  python3 main.py 
+  334  ping 8.8.8.8
+  335  udo sysctl -w kernel.sched_rt_runtime_us=-1
+  336  sysctl -w kernel.sched_rt_runtime_us=-1
+  337  python3 main.py 
+  338  nano main.py 
+  339  python3 main.py 
+  340  python3 main.py 
+  341  cd osmo-nitb-scripts-calypsobts
+  342  ls
+  343  cd src/
+  344  ls
+  345  mv osmo-nitb-scripts-calypsobts ../../root/
+  346  cd osmo-nitb-scripts-calypsobts-v2.zip 
+  347  cd ..
+  348  cd osmo-nitb-scripts-calypsobts/
+  349  bash trx.sh
+  350  bash trx.sh
+  351  gedit trx.sh 
+  352  nano trx.sh 
+  353  bash trx.sh
+  354  python3 main_spoof.py
+  355  cd osmo-nitb-scripts-calypsobts/
+  356  python3 main_spoof.py
+  357  nano main_spoof.py
+  358  nano main.py
+  359  python main
+  360  python3 main.py
+  361  nano 
+  362  nano main_spoof.py
+  363  nano main_spoof.py
+  364  nano main_spoof.py
+  365  nano main.py
+  366  nano main_spoof.py
+  367  nano main.py
+  368  nano main_spoof.py
+  369  nano main.py
+  370  nano main.py
+  371  python3 main.py 
+  372  systemctl
+  373  systemctl start
+  374  python3 main.py 
+  375  nano main.py
+  376  python3 main.py 
+  377  nano main.py
+  378  nano main.py
+  379  python3 main.py 
+  380  nano services/osmo-nitb3.service 
+  381  python3 main.py 
+  382  nano services/osmo-trx-lms3.service 
+  383  nano services/osmo-nitb3.service 
+  384  nano services/osmo-bts-trx3.service 
+  385  bash install_services.sh 
+  386  python3 main.py 
+  387  python3 main.py 
+  388  python3 main.py 
+  389  nano main.py 
+  390  ls /etc/osmocom3/
+  391  python3 main.py 
+  392  nano main.py 
+  393  nano main_spoof.py 
+  394  nano main_spoof.py 
+  395  nano main.py 
+  396  python3 main.py 
+  397  nano main.py 
+  398  python3 main.py 
+  399  sysctl
+  400  nano main.py 
+  401  python3 main.py 
+  402  journalctl -b -S 18:2:48 -u osmo-nitb3.service
+  403  ls /usr/src/CalypsoBTS/
+  404  nano main.py 
+  405  nano main.py 
+  406  nano services/osmo-nitb3.service 
+  407  nano main.py 
+  408  nano main.py 
+  409  nano main.py 
+  410  nano services/osmo-nitb3.service 
+  411  nano services/osmo-nitb3.service 
+  412  nano main.py 
+  413  nano services/osmo-nitb3.service 
+  414  python3 main.py 
+  415  ls
+  416  nano configs/openbsc.cfg 
+  417  python3 main.py 
+  418  python3 main.py 
+  419  nano configs/openbsc_egprs.cfg 
+  420  nano configs/openbsc_egprs.cfg 
+  421  nano configs/openbsc_egprs.cfg 
+  422  nano configs/openbsc_egprs.cfg 
+  423  cd configs/
+  424  ls
+  425  tail -f openbsc_egprs.cfg 
+  426  nano openbsc_egprs.cfg 
+  427  clear
+  428  exit
+  429  ls
+  430  cd osmo-nitb-scripts-calypsobts/
+  431  bash trx.sh 
+  432  bash trx.sh 
+  433  bash trx.sh 
+  434  ls
+  435  rm -rf osmo-nitb-scripts-calypsobts/
+  436  wget https://raw.githubusercontent.com/SitrakaResearchAndPOC/nitb-script-all/main/osmo-nitb-scripts-calypsobts-v3.zip
+  437  unzip osmo-nitb-scripts-calypsobts-v3.zip 
+  438  mkdir /usr/src/CalypsoBTS/
+  439  touch /usr/src/CalypsoBTS/hlr.sqlite3
+  440  bash install_services.sh 
+  441  cd osmo-nitb-scripts-calypsobts
+  442  clear
+  443  bash install_services.sh 
+  444  fuser -k /usr/src/CalypsoBTS/hlr.sqlite3
+  445  cd ..
+  446  cp -rf src/trx/  /usr/src/CalypsoBTS/
+  447  cd /usr/src/CalypsoBTS/
+  448  cp trx/src/host/osmocon/osmocon ../CalypsoBTS/
+  449  cp -rf trx/src/target/firmware/board ../CalypsoBTS/
+  450   mv board/ firmwares
+  451  cp trx/src/host/layer23/src/transceiver/transceiver ../CalypsoBTS/
+  452  chmod +x osmocon
+  453  chmod +x transceiver 
+  454  exit
+  455  cd osmo-nitb-scripts-calypsobts
+  456  bash trx.sh
+  457  nano trx.sh 
+  458  bash trx.sh
+  459  lxc exec BulkSMS -- bash osmo-nitb-scripts-calypsobts/trx.sh
+  460  exit
+  461  cd osmo-nitb-scripts-calypsobts
+  462  ls
+  463  cd scripts_spoof2/
+  464  ls
+  465  exit
+  466  uhd_images_downloader 
+  467  exit
+  468  exit
+  469  wget https://github.com/SitrakaResearchAndPOC/fork_QCSuperLXD/blob/main/lxd-device
+  470  ls
+  471  chmod +x lxd-device 
+  472  exit
+  473  ls
+  474  cd osmo-nitb-scripts
+  475  python3 main_uhd.py 
+  476   journalctl -b -S 3:46:38 -u osmo-bts-trx2.service
+  477  bash install_services.sh 
+  478   journalctl -b -S 3:46:38 -u osmo-bts-trx2.service
+  479  python3 main_uhd.py 
+  480  nano /root/osmo-nitb-scripts/scripts/HLR.py 
+  481  nano /root/osmo-nitb-scripts/main_uhd.py 
+  482  mkdir -rf /var/lib/osmocom/
+  483  mkdir -r/var/lib/osmocom/
+  484  mkdir /var/lib/osmocom/
+  485  nano /root/osmo-nitb-scripts/main_uhd.py 
+  486  touch /var/lib/osmocom/hlr.sqlite3
+  487  bash install_services.sh 
+  488  python3 main_uhd.py 
+  489  nano services/osmo-bts-trx2.service 
+  490  nano services/osmo-bts-trx2.service 
+  491  ls services/osmo-bts-trx2.service 
+  492  tail -f services/osmo-bts-trx2.service 
+  493  nano services/osmo-bts-trx2.service 
+  494  nano services/osmo-trx.service 
+  495  lxc exec BulkSMS -- osmo-trx-uhd -C /etc/osmocom/osmo-trx-uhd.cfg
+  496  exit
+  497  ls
+  498  rm -rf lxd-device
+  499  ls
+  500  exit
+  501  ls
+  502  history
+
