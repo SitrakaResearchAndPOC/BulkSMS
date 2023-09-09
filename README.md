@@ -645,16 +645,10 @@ dmesg | grep ttyUSB*
 ```
 lxc config device add BulkSMS ttyUSB0 unix-char path=/dev/ttyUSB0
 ```
-```
-lxc config device add BulkSMS ttyUSB1 unix-char path=/dev/ttyUSB1
-```
 
 # REMOVING DEVICES ON LXC
 ```
 lxc config device remove BulkSMS ttyUSB0 
-```
-```
-lxc config device remove BulkSMS ttyUSB1 
 ```
 
 # CONFIGURING SCRIPT
@@ -731,9 +725,6 @@ exit
 
 ```
 lxc config device add BulkSMS ttyUSB0 unix-char path=/dev/ttyUSB0
-```
-```
-lxc config device add BulkSMS ttyUSB1 unix-char path=/dev/ttyUSB1
 ```
 ```
 lxc config set BulkSMS security.privileged=true
