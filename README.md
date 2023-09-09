@@ -388,7 +388,7 @@ make install
 ldconfig
 ```
 ```
-cd ../..
+cd ..
 ```
 "# 3/3
 
@@ -452,7 +452,7 @@ cd ..
 ```
 
 "#  
-Installing osmobts  1.2.0 or 1.2.2 or 1.0.2 or 1.0.0 
+Installing osmotrx  1.2.0 or 1.2.2 or 1.0.2 or 1.0.0 
 ```
 git clone --depth 1 -b 1.2.0 https://gitea.osmocom.org/cellular-infrastructure/osmo-trx
 ```
@@ -477,6 +477,10 @@ make install
 ```
 ldconfig
 ```
+```
+cd ..
+```
+
 "# 5/7
 
 Installing osmobts 1.2.2 or 1.0.0
@@ -505,7 +509,7 @@ make install
 ldconfig
 ```
 ```
-cd ../..
+cd ..
 ```
 "#8/8
 
