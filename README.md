@@ -67,7 +67,7 @@ apt-get install libortp-dev
 apt-get install fuse zip
 ```
 ```
-sudo apt-get install libfuse-dev 
+apt-get install libfuse-dev 
 ```
 Creating and installing all components
 ```
@@ -98,10 +98,10 @@ cmake ..
 make -j4
 ```
 ```
-sudo make install
+make install
 ```
 ```
-sudo ldconfig
+ldconfig
 ```
 ```
 cd ../../..
@@ -132,10 +132,10 @@ make -j4
 make check
 ```
 ```
-sudo make install
+make install
 ```
 ```
-sudo ldconfig
+ldconfig
 ```
 ```
 cd ..
@@ -231,10 +231,10 @@ make -j4
 make check
 ```
 ```
-sudo make install
+make install
 ```
 ```
-sudo ldconfig
+ldconfig
 ```
 ```
 cd ..
@@ -261,10 +261,10 @@ make -j4
 make check
 ```
 ```
-sudo make install
+make install
 ```
 ```
-sudo ldconfig
+ldconfig
 ```
 ```
 cd ..
@@ -292,10 +292,10 @@ make -j4
 make check
 ```
 ```
-sudo make install
+make install
 ```
 ```
-sudo ldconfig
+ldconfig
 ```
 ```
 cd ..
@@ -323,13 +323,13 @@ make -j4
 make check
 ```
 ```
-sudo make install
+make install
 ```
 ```
-sudo ldconfig
+ldconfig
 ```
 ```
-cd ../..
+cd ..
 ```
 "#
 
@@ -354,10 +354,10 @@ make -j4
 make check
 ```
 ```
-sudo make install
+make install
 ```
 ```
-sudo ldconfig
+ldconfig
 ```
 ```
 cd ..
@@ -382,10 +382,10 @@ make -j4
 make check
 ```
 ```
-sudo make install
+make install
 ```
 ```
-sudo ldconfig
+ldconfig
 ```
 ```
 cd ../..
@@ -413,10 +413,10 @@ make -j4
 make check
 ```
 ```
-sudo make install
+make install
 ```
 ```
-sudo ldconfig
+ldconfig
 ```
 ```
 cd ..
@@ -442,10 +442,10 @@ make -j4
 make check
 ```
 ```
-sudo make install
+make install
 ```
 ```
-sudo ldconfig
+ldconfig
 ```
 ```
 cd ..
@@ -472,10 +472,10 @@ make -j4
 make check
 ```
 ```
-sudo make install
+make install
 ```
 ```
-sudo ldconfig
+ldconfig
 ```
 "# 5/7
 
@@ -499,10 +499,10 @@ make -j4
 make check
 ```
 ```
-sudo make install
+make install
 ```
 ```
-sudo ldconfig
+ldconfig
 ```
 ```
 cd ../..
@@ -530,10 +530,10 @@ make -j4
 make check
 ```
 ```
-sudo make install
+make install
 ```
 ```
-sudo ldconfig
+ldconfig
 ```
 ```
 cd ..
@@ -559,10 +559,10 @@ make -j4
 make check
 ```
 ```
-sudo make install
+make install
 ```
 ```
-sudo ldconfig
+ldconfig
 ```
 ```
 cd ../..
@@ -589,10 +589,10 @@ make -j4
 make check
 ```
 ```
-sudo make install
+make install
 ```
 ```
-sudo ldconfig
+ldconfig
 ```
 ```
 cd ..
@@ -618,10 +618,10 @@ make -j4
 make check
 ```
 ```
-sudo make install
+make install
 ```
 ```
-sudo ldconfig
+ldconfig
 ```
 ```
 cd ..
