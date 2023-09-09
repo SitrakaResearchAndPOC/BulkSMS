@@ -723,7 +723,7 @@ chmod +x transceiver
 ```
 nano /usr/src/CalypsoBTS/osmo-bts-trx-calypso.cfg
 ```
-Change the config file as  : [osmo-bts-trx-calypso.cfg](https://github.com/SitrakaResearchAndPOC/nitb-script-all/blob/main/osmo-bts-trx-calypso.cfg)
+Change the config file as  : [osmo-bts-trx-calypso.cfg](https://raw.githubusercontent.com/SitrakaResearchAndPOC/nitb-script-all/main/osmo-bts-trx-calypso.cfg)
 ```
 exit
 ```
@@ -863,7 +863,7 @@ touch /etc/osmocom/osmo-trx-uhd.cfg
 ```
 nano osmo-trx-uhd.cfg
 ```
-Add config
+Add config [osmo-trx-uhd.cfg](https://raw.githubusercontent.com/SitrakaResearchAndPOC/nitb-script-all/main/osmo-trx-uhd.cfg)
 ```
 wget https://raw.githubusercontent.com/SitrakaResearchAndPOC/nitb-script-all/main/osmo-nitb-scripts-v3.zip
 ```
