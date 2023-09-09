@@ -31,9 +31,9 @@ List of sourcelist
  deb http://deb.debian.org/debian/ buster main contrib
  deb-src http://deb.debian.org/debian/ buster main contrib
 ```
-Tape ctrl+x
-and :w + enter
-and :q + ente
+Tape ctrl+x  
+and :w + enter  
+and :q + ente  
 
 ```
 apt update
