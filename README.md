@@ -108,7 +108,7 @@ cd ../../..
 ```
 
 
-Installing libosmocore 1.7.0 pr 1.0.1
+Installing libosmocore 1.7.0 or 1.0.1
 ```
 git clone --depth 1 -b 1.7.0 https://gitea.osmocom.org/osmocom/libosmocore
 ```
