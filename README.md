@@ -110,6 +110,10 @@ cd ../../..
 
 Installing libosmocore 1.7.0 or 1.0.1
 ```
+apt-get install libmnl-dev
+```
+
+```
 git clone --depth 1 -b 1.7.0 https://gitea.osmocom.org/osmocom/libosmocore
 ```
 ```
