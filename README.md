@@ -819,7 +819,17 @@ You could find imsi and extension
 lxc exec BulkSMS -- python2 osmo-nitb-scripts-calypsobts/scripts_spoof2/show_subscribers.py
 ```
 ## Testing CALYPSO FakeSMS Sender
-
+Copying config.json
+```
+lxc exec BulkSMS -- bash
+```
+```
+cp osmo-nitb-scripts-calypsobts/config.json ../root
+```
+```
+exit
+```
+Configuring trx calypso
 ```
 lxc exec BulkSMS -- bash
 ```
@@ -995,6 +1005,17 @@ exit
 ```
 
 ## Testing USRP Fake SMS Sender
+Copying config.json
+```
+lxc exec BulkSMS -- bash
+```
+```
+cp osmo-nitb-scripts/config.json ../root
+```
+```
+exit
+```
+Configuring trx uhd
 ```
 lxc exec BulkSMS -- bash 
 ```
