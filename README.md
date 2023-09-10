@@ -834,6 +834,26 @@ Configure arfcn at service/osmotrx.lms as 975
 ```
 nano services/osmo-trx-lms3.service 
 ```
+ctrl+x and tape yes
+```
+exit
+```
+```
+lxc exec BulkSMS -- bash
+```
+```
+cd osmo-nitb-scripts-calypsobts
+```
+```
+bash install_services.sh 
+```
+For avoiding lock database error 
+```
+fuser -k /usr/src/CalypsoBTS/hlr.sqlite3
+```
+```
+exit
+```
 ```
 lxc exec BulkSMS -- bash osmo-nitb-scripts-calypsobts/trx.sh
 ```
@@ -975,12 +995,17 @@ exit
 ```
 
 ## Testing USRP Fake SMS Sender
-
+```
+lxc exec BulkSMS -- bash 
+```
 ```
 cd osmo-nitb-scripts
 ```
 ```
 bash install_services.sh 
+```
+```
+exit
 ```
 ```
 lxc exec BulkSMS -- bash 
@@ -1017,80 +1042,3 @@ md5sum 0fd7664a00694613964919796da5d797f179a32df134f8a2bc46ae20dee62d69.tar.gz
 ```
 chmod 777 0fd7664a00694613964919796da5d797f179a32df134f8a2bc46ae20dee62d69.tar.gz
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
