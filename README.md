@@ -1051,7 +1051,8 @@ exit
 ```
 lxc publish BulkSMS --alias BulkSMS -f
 ```
-Instance published with fingerprint: 0fd7664a00694613964919796da5d797f179a32df134f8a2bc46ae20dee62d69
+* OLD VERSION :
+Instance published with fingerprint : 0fd7664a00694613964919796da5d797f179a32df134f8a2bc46ae20dee62d69 at (IMAGE)[https://drive.google.com/file/d/1qyJamZmOchLc8zEfSDu5ynATSYdaZa7c/view?usp=drive_link]
 ```
 lxc export BulkSMS .
 ```
@@ -1063,3 +1064,16 @@ md5sum 0fd7664a00694613964919796da5d797f179a32df134f8a2bc46ae20dee62d69.tar.gz
 ```
 chmod 777 0fd7664a00694613964919796da5d797f179a32df134f8a2bc46ae20dee62d69.tar.gz
 ```
+* NEW VERSION :
+Instance published with fingerprint : b16bbdd431cb94e1c6044533336e6fa44a1b8ee083b1f8bb3e397c0d75b92257.tar.gz at (IMAGE)[https://drive.google.com/file/d/1yYLVjgxRSxJlRqznnWTs0LUKTQzZKqZf/view?usp=drive_link]
+```
+lxc export BulkSMS .
+```
+```
+md5sum 
+```
+2518502caa57061ab3ad9b5e8c4df287  b16bbdd431cb94e1c6044533336e6fa44a1b8ee083b1f8bb3e397c0d75b92257.tar.gz
+```
+chmod 777 b16bbdd431cb94e1c6044533336e6fa44a1b8ee083b1f8bb3e397c0d75b92257.tar.gz
+
+
