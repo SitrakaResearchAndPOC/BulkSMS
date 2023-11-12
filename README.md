@@ -1076,4 +1076,91 @@ md5sum
 ```
 chmod 777 b16bbdd431cb94e1c6044533336e6fa44a1b8ee083b1f8bb3e397c0d75b92257.tar.gz
 
+# BULKSMS FOR QUICK INSTALL
+## Installation with LXC  using ubuntu if not yet installed
+```
+apt update
+```
+```
+apt-get install lxd lxd-client
+```
+
+
+## Installation with LXC  using DragonOS if not yet installed
+```
+apt update
+```
+```
+apt-get install snapd  
+```
+```
+snap install lxd  
+```
+
+```
+snap install lxd-client  
+```
+
+## Initialisation of LXD if not yet installed
+```
+lxd init  
+```
+For questions please follow the default option, an image illustration is at [image](https://github.com/SitrakaResearchAndPOC/QCSuper/blob/main/screen.jpg) 
+  
+User need to be in group lxd :
+```
+sudo usermod -a G lxd $USER  
+```
+or  
+```
+sudo /usr/sbin/usermod lxd $USER  
+```
+
+$PATH need to contains /usr/local/bin, verify with :  
+```
+echo $PATH  
+```
+
+if not, setup this, or add this in your .bashrc or .zshrc or ...  
+
+```
+export PATH=$PATH:/usr/local/bin  
+```
+# IMPORTING IMAGES FOR QUICK INSTALL
+## downloading and importing image for Quick install
+```
+wget --load-cookies /tmp/cookies.txt "https://docs.google.com/uc?export=download&confirm=$(wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate 'https://docs.google.com/uc?export=download&id=1yYLVjgxRSxJlRqznnWTs0LUKTQzZKqZf' -O- | sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')&id=1yYLVjgxRSxJlRqznnWTs0LUKTQzZKqZf" -O b16bbdd431cb94e1c6044533336e6fa44a1b8ee083b1f8bb3e397c0d75b92257.tar.gz   && rm -rf /tmp/cookies.txt  
+```
+```
+lxc image import b16bbdd431cb94e1c6044533336e6fa44a1b8ee083b1f8bb3e397c0d75b92257.tar.gz --alias BulkSMSimage
+```
+```
+lxc launch BulkSMSimage BulkSMS
+```
+
+# LAUNCHING FOR QUICK INSTALL
+## Adding devices on lxc
+Plug usb ttl for motorola phone
+## Finding all devices
+```
+dmesg | grep ttyUSB*
+```
+## Adding devices USRP on LXC
+* For on Phone (SMS only)
+```
+lxc config device add KarliBTS ttyUSB0 unix-char path=/dev/ttyUSB0
+```  
+* For two Phones (SMS and Call)
+```
+lxc config device add KarliBTS ttyUSB0 unix-char path=/dev/ttyUSB0
+```
+```
+lxc config device add KarliBTS ttyUSB1 unix-char path=/dev/ttyUSB1
+```
+## Setting privileges
+```
+lxc config set KarliBTS security.privileged=true
+```
+
+
 
