@@ -16,30 +16,20 @@ Hardware setup 2 : No need battery and programmable with arduino
 # Hardware setup for USRP
 <p align="center" >
   <img align="left" width="400" height="200" src="https://github.com/SitrakaResearchAndPOC/BulkSMS_LXD/blob/main/usrp1.jpg">
-  <img align="right" width="400" height="200" src="https://github.com/SitrakaResearchAndPOC/BulkSMS_LXD/blob/main/usrp2.jpg">
 </p>
 
-
-<p align="center">
-  <img align="left"width="400" height="200" src="https://github.com/SitrakaResearchAndPOC/BulkSMS_LXD/blob/main/usrp3.jpg">
-  <img align="right" width="400" height="200" src="https://github.com/SitrakaResearchAndPOC/BulkSMS_LXD/blob/main/usrp4.jpg">
+<p align="center" >
+  <img align="left" width="400" height="200" src="https://github.com/SitrakaResearchAndPOC/BulkSMS_LXD/blob/main/usrp2.jpg">
 </p>
 
+<p align="center" >
+  <img align="left" width="400" height="200" src="https://github.com/SitrakaResearchAndPOC/BulkSMS_LXD/blob/main/usrp3.jpg">
+</p>
 
-<p align="center">
+<p align="center" >
+  <img align="left" width="400" height="200" src="https://github.com/SitrakaResearchAndPOC/BulkSMS_LXD/blob/main/usrp4.jpg">
 </p>
-<p align="center">
-</p>
-<p align="center">
-</p>
-<p align="center">
-</p>
-<p align="center">
-</p>
-<p align="center">
-</p>
-<p align="center">
-</p>
+
 
 # Installation of BulkSMS 
 ```
