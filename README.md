@@ -30,6 +30,16 @@ Hardware setup 2 : No need battery and programmable with arduino
 </p>
 <p align="center">
 </p>
+<p align="center">
+</p>
+<p align="center">
+</p>
+<p align="center">
+</p>
+<p align="center">
+</p>
+<p align="center">
+</p>
 
 # Installation of BulkSMS 
 ```
