@@ -17,7 +17,6 @@ Hardware setup 2 : No need battery and programmable with arduino
 <p>
   <img align="left" width="400" height="200" src="https://github.com/SitrakaResearchAndPOC/BulkSMS_LXD/blob/main/usrp1.jpg">
   <img align="right" width="400" height="200" src="https://github.com/SitrakaResearchAndPOC/BulkSMS_LXD/blob/main/usrp2.jpg">
-
 </p>
 
 
@@ -26,9 +25,10 @@ Hardware setup 2 : No need battery and programmable with arduino
   <img align="right" width="400" height="200" src="https://github.com/SitrakaResearchAndPOC/BulkSMS_LXD/blob/main/usrp4.jpg">
 </p>
 
-
+#
 
 # Installation of BulkSMS 
+
 ```
 lxc launch images:debian/10 BulkSMS
 ```
