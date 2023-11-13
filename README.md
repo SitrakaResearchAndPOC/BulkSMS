@@ -7,6 +7,12 @@ Hardware setup 1 : Need battery and not programmable with arduino
   <img src="https://github.com/SitrakaResearchAndPOC/GSM_IMSICATCHER_HALFMITM_SPOOFING-SMS-WITH-PHYSICAL-MS/blob/main/usb_motorola.jpg">
 </p>
 
+
+Hardware setup 2 : No need battery and programmable with arduino  
+<p align="center">
+  <img src="https://github.com/SitrakaResearchAndPOC/GSM_IMSICATCHER_HALFMITM_SPOOFING-SMS-WITH-PHYSICAL-MS/blob/main/USB_TTL.jpg">
+</p>
+
 # Hardware setup for USRP
 <p>
   <img align="left" width="400" height="200" src="https://github.com/SitrakaResearchAndPOC/BulkSMS_LXD/blob/main/usrp1.jpg">
@@ -15,24 +21,10 @@ Hardware setup 1 : Need battery and not programmable with arduino
 </p>
 
 
-<p align="left">
-  <img width="400" height="200" src="https://github.com/SitrakaResearchAndPOC/BulkSMS_LXD/blob/main/usrp3.jpg">
+<p>
+  <img align="left"width="400" height="200" src="https://github.com/SitrakaResearchAndPOC/BulkSMS_LXD/blob/main/usrp3.jpg">
+  <img align="right" width="400" height="200" src="https://github.com/SitrakaResearchAndPOC/BulkSMS_LXD/blob/main/usrp4.jpg">
 </p>
-
-<p align="right">
-  <img width="400" height="200" src="https://github.com/SitrakaResearchAndPOC/BulkSMS_LXD/blob/main/usrp4.jpg">
-</p>
-
-Hardware setup 2 : No need battery and programmable with arduino  
-<p align="center">
-  <img src="https://github.com/SitrakaResearchAndPOC/GSM_IMSICATCHER_HALFMITM_SPOOFING-SMS-WITH-PHYSICAL-MS/blob/main/USB_TTL.jpg">
-</p>
-
-# Hardware setup for calypsoBTS
-<p align="center">
-  <img src="https://github.com/SitrakaResearchAndPOC/GSM_IMSICATCHER_HALFMITM_SPOOFING-SMS-WITH-PHYSICAL-MS/blob/main/USB_TTL.jpg">
-</p>
-
 
 
 
