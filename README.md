@@ -8,19 +8,19 @@ Hardware setup 1 : Need battery and not programmable with arduino
 </p>
 
 # Hardware setup for USRP
-<p align="center">
+<p align="left">
   <img width="400" height="200" src="https://github.com/SitrakaResearchAndPOC/BulkSMS_LXD/blob/main/usrp1.jpg">
 </p>
 
-<p align="center">
+<p align="right">
   <img width="400" height="200" src="https://github.com/SitrakaResearchAndPOC/BulkSMS_LXD/blob/main/usrp2.jpg">
 </p>
 
-<p align="center">
+<p align="left">
   <img width="400" height="200" src="https://github.com/SitrakaResearchAndPOC/BulkSMS_LXD/blob/main/usrp3.jpg">
 </p>
 
-<p align="center">
+<p align="right">
   <img width="400" height="200" src="https://github.com/SitrakaResearchAndPOC/BulkSMS_LXD/blob/main/usrp4.jpg">
 </p>
 
