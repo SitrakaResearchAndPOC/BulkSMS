@@ -25,7 +25,12 @@ Hardware setup 2 : No need battery and programmable with arduino
   <img align="right" width="400" height="200" src="https://github.com/SitrakaResearchAndPOC/BulkSMS_LXD/blob/main/usrp4.jpg">
 </p>
 
-#
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
 
 # Installation of BulkSMS 
 
