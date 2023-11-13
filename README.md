@@ -27,8 +27,11 @@ Hardware setup 2 : No need battery and programmable with arduino
 
 
 <p align="center">
-# Installation of BulkSMS 
 </p>
+<p align="center">
+</p>
+
+# Installation of BulkSMS 
 ```
 lxc launch images:debian/10 BulkSMS
 ```
