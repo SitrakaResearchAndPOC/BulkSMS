@@ -1169,7 +1169,7 @@ Plug usb ttl for motorola phone
 ```
 dmesg | grep ttyUSB*
 ```
-## Adding devices USRP on LXC for Quick install
+## Adding devices USB TTL on LXC for Quick install
 ```
 lxc config device add BulkSMS ttyUSB0 unix-char path=/dev/ttyUSB0
 ```  
