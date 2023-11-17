@@ -955,6 +955,9 @@ cd osmo-nitb-scripts
 bash install_services.sh 
 ```
 ```
+exit
+```
+```
 lxc exec BulkSMS -- bash 
 ```
 ```
@@ -1222,6 +1225,9 @@ fuser -k /usr/src/CalypsoBTS/hlr.sqlite3
 ```
 cd ..
 ```
+```
+exit
+```
 
 ## Plug usb ttl for Quick install
 ```
@@ -1382,6 +1388,9 @@ cd osmo-nitb-scripts
 bash install_services.sh 
 ```
 ```
+exit
+```
+```
 lxc exec BulkSMS -- bash 
 ```
 ```
@@ -1478,7 +1487,7 @@ lxc exec BulkSMS -- python3 osmo-nitb-scripts/main_uhd.py
 ```
 Add victim phone and tape Tape ctrl+shift+T
 ```
-lxc exec BulkSMS -- python3 osmo-nitb-scripts-calypsobts/interact.py
+lxc exec BulkSMS -- python3 osmo-nitb-scripts/interact.py
 ```
 ```
 exit
