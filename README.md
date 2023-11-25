@@ -791,9 +791,9 @@ ctrl+shift+T
 lxc exec BulkSMS -- bash osmo-nitb-scripts-calypsobts/scripts_spoof1/finding_imsi_extenstion.sh
 ```
 You could find imsi and extension  
-let's see for example imsi as 646040222463674 and extension as 126
+let's see for example IMSI as 646040222463674 and EXTENSION as 126
 ```
-lxc exec BulkSMS -- bash osmo-nitb-scripts-calypsobts/scripts_spoof1/set_imsi_extension.sh 646040222463674 0341220590
+lxc exec BulkSMS -- bash osmo-nitb-scripts-calypsobts/scripts_spoof1/set_imsi_extension.sh IMSI 0341220590
 ```
 Verify by if the association is correct
 let's see for example imsi as 646040222463674 and extension as 0341220590
@@ -818,9 +818,9 @@ ctrl+shift+T
 lxc exec BulkSMS -- python2 osmo-nitb-scripts-calypsobts/scripts_spoof2/show_subscribers.py 
 ```
 You could find imsi and extension
-Create a virtual extension 0341220590 and send sms to existing extension eg : 164
+Create a virtual extension 0341220590 and send sms to existing EXTENSION eg : 164
 ```
-lxc exec BulkSMS -- python2 osmo-nitb-scripts-calypsobts/scripts_spoof2/sms_send_source_dest_msg.py 0341220590 164 "link gmail"
+lxc exec BulkSMS -- python2 osmo-nitb-scripts-calypsobts/scripts_spoof2/sms_send_source_dest_msg.py 0341220590 EXTENSION "link gmail"
 ```
 You could find imsi and extension
 ```
@@ -828,7 +828,7 @@ lxc exec BulkSMS -- python2 osmo-nitb-scripts-calypsobts/scripts_spoof2/show_sub
 ```
 Creating many extensions for sending a scam sms repeat 3 times
 ```
-lxc exec BulkSMS -- python2 osmo-nitb-scripts-calypsobts/scripts_spoof2/sms_spam.py 164 3 "link gmail"
+lxc exec BulkSMS -- python2 osmo-nitb-scripts-calypsobts/scripts_spoof2/sms_spam.py EXTENSION 3 "link gmail"
 ```
 You could find imsi and extension
 ```
@@ -977,9 +977,9 @@ exit
 lxc exec BulkSMS -- bash osmo-nitb-scripts/scripts_spoof1/finding_imsi_extenstion.sh
 ```
 You could find imsi and extension  
-let's see for example imsi as 646040222463674 and extension as 126
+let's see for example IMSI as 646040222463674 and EXTENSION as 126
 ```
-lxc exec BulkSMS -- bash osmo-nitb-scripts/scripts_spoof1/set_imsi_extension.sh 646040222463674 0341220590
+lxc exec BulkSMS -- bash osmo-nitb-scripts/scripts_spoof1/set_imsi_extension.sh IMSI 0341220590
 ```
 Verify by if the association is correct
 let's see for example imsi as 646040222463674 and extension as 0341220590
@@ -1003,9 +1003,9 @@ log should be :  subscriber extension 0341220590 sms sender extension 0341220590
 lxc exec BulkSMS -- python2 osmo-nitb-scripts/scripts_spoof2/show_subscribers.py 
 ```
 You could find imsi and extension
-Create a virtual extension 0341220590 and send sms to existing extension eg : 164
+Create a virtual extension 0341220590 and send sms to existing EXTENSION eg : 164
 ```
-lxc exec BulkSMS -- python2 osmo-nitb-scripts/scripts_spoof2/sms_send_source_dest_msg.py 0341220590 164 "link gmail"
+lxc exec BulkSMS -- python2 osmo-nitb-scripts/scripts_spoof2/sms_send_source_dest_msg.py 0341220590 EXTENSION "link gmail"
 ```
 You could find imsi and extension
 ```
@@ -1013,7 +1013,7 @@ lxc exec BulkSMS -- python2 osmo-nitb-scripts/scripts_spoof2/show_subscribers.py
 ```
 Creating many extensions for sending a scam sms repeat 3 times
 ```
-lxc exec BulkSMS -- python2 osmo-nitb-scripts/scripts_spoof2/sms_spam.py 164 3 "link gmail"
+lxc exec BulkSMS -- python2 osmo-nitb-scripts/scripts_spoof2/sms_spam.py EXTENSION 3 "link gmail"
 ```
 You could find imsi and extension
 ```
@@ -1254,9 +1254,9 @@ ctrl+shift+T
 lxc exec BulkSMS -- bash osmo-nitb-scripts-calypsobts/scripts_spoof1/finding_imsi_extenstion.sh
 ```
 You could find imsi and extension  
-let's see for example imsi as 646040222463674 and extension as 126
+let's see for example IMSI as 646040222463674 and extension as 0341220590
 ```
-lxc exec BulkSMS -- bash osmo-nitb-scripts-calypsobts/scripts_spoof1/set_imsi_extension.sh 646040222463674 0341220590
+lxc exec BulkSMS -- bash osmo-nitb-scripts-calypsobts/scripts_spoof1/set_imsi_extension.sh IMSI 0341220590
 ```
 Verify by if the association is correct
 let's see for example imsi as 646040222463674 and extension as 0341220590
@@ -1281,9 +1281,9 @@ ctrl+shift+T
 lxc exec BulkSMS -- python2 osmo-nitb-scripts-calypsobts/scripts_spoof2/show_subscribers.py 
 ```
 You could find imsi and extension
-Create a virtual extension 0341220590 and send sms to existing extension eg : 164
+Create a virtual extension 0341220590 and send sms to existing EXTENSION eg : 164
 ```
-lxc exec BulkSMS -- python2 osmo-nitb-scripts-calypsobts/scripts_spoof2/sms_send_source_dest_msg.py 0341220590 164 "link gmail"
+lxc exec BulkSMS -- python2 osmo-nitb-scripts-calypsobts/scripts_spoof2/sms_send_source_dest_msg.py 0341220590 EXTENSION "link gmail"
 ```
 You could find imsi and extension
 ```
@@ -1291,7 +1291,7 @@ lxc exec BulkSMS -- python2 osmo-nitb-scripts-calypsobts/scripts_spoof2/show_sub
 ```
 Creating many extensions for sending a scam sms repeat 3 times
 ```
-lxc exec BulkSMS -- python2 osmo-nitb-scripts-calypsobts/scripts_spoof2/sms_spam.py 164 3 "link gmail"
+lxc exec BulkSMS -- python2 osmo-nitb-scripts-calypsobts/scripts_spoof2/sms_spam.py EXTENSION 3 "link gmail"
 ```
 You could find imsi and extension
 ```
@@ -1408,7 +1408,7 @@ lxc exec BulkSMS -- bash osmo-nitb-scripts/scripts_spoof1/finding_imsi_extenstio
 You could find imsi and extension  
 let's see for example imsi as 646040222463674 and extension as 126
 ```
-lxc exec BulkSMS -- bash osmo-nitb-scripts/scripts_spoof1/set_imsi_extension.sh 646040222463674 0341220590
+lxc exec BulkSMS -- bash osmo-nitb-scripts/scripts_spoof1/set_imsi_extension.sh IMSI 0341220590
 ```
 Verify by if the association is correct
 let's see for example imsi as 646040222463674 and extension as 0341220590
@@ -1432,9 +1432,9 @@ log should be :  subscriber extension 0341220590 sms sender extension 0341220590
 lxc exec BulkSMS -- python2 osmo-nitb-scripts/scripts_spoof2/show_subscribers.py 
 ```
 You could find imsi and extension
-Create a virtual extension 0341220590 and send sms to existing extension eg : 164
+Create a virtual extension 0341220590 and send sms to existing EXTENSION eg : 164
 ```
-lxc exec BulkSMS -- python2 osmo-nitb-scripts/scripts_spoof2/sms_send_source_dest_msg.py 0341220590 164 "link gmail"
+lxc exec BulkSMS -- python2 osmo-nitb-scripts/scripts_spoof2/sms_send_source_dest_msg.py 0341220590 EXTENSION "link gmail"
 ```
 You could find imsi and extension
 ```
@@ -1442,7 +1442,7 @@ lxc exec BulkSMS -- python2 osmo-nitb-scripts/scripts_spoof2/show_subscribers.py
 ```
 Creating many extensions for sending a scam sms repeat 3 times
 ```
-lxc exec BulkSMS -- python2 osmo-nitb-scripts/scripts_spoof2/sms_spam.py 164 3 "link gmail"
+lxc exec BulkSMS -- python2 osmo-nitb-scripts/scripts_spoof2/sms_spam.py EXTENSION 3 "link gmail"
 ```
 You could find imsi and extension
 ```
